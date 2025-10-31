@@ -1,6 +1,7 @@
 import spacy
 import re
 
+
 def pii_redactor(input_path, output_path):
 
     nlp = spacy.load("en_core_web_sm")

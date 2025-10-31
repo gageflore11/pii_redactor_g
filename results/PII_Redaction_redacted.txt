@@ -1,0 +1,2 @@
+[NAME] lives at [ADDRESS]. You can contact him at [EMAIL]
+ or call him on his phone number, [PHONE]. His social security number is [SSN]. Yesterday, he visited Dr. [NAME] at Springfield Medical Center, whose email is [EMAIL] Payment details include credit card number [CREDIT/DEBIT CARD] and bank account [BANK ACCOUNT].

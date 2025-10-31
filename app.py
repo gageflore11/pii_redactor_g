@@ -1,6 +1,8 @@
 import os
 from flask import Flask, render_template, request, redirect, url_for, abort
 from pii_redactor import pii_redactor
+import os
+os.makedirs("results", exist_ok=True)
 
 app=Flask(__name__)
 
