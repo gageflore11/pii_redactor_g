@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+	<title>PII Redactor</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="title">
+            <h1>PII Redactor</h1>
+            <p>Smart Code. Clever Solutions.</p>
+        </div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.gif') }}" class="logo" width="200" height="100">
+        </div>
+    </div>
+
+    <div class="message">
+        <h1>Welcome to PII Redactor — a simple tool that safely and instantly removes all 
+            personally identifiable information (PII) from your uploaded files.</h1>
+    </div>
+
+    <div class="redaction_results">
+        <h2>Your file has been successfully processed. Click on the link(s) below to download your file(s)</h2>
+        <ul>
+            {% if files and files|length > 0 %}
+                {% for file in files %}
+                    <li>
+                        <a href="{{ url_for('download_file', filename=file) }}">Download {{ file }}</a>
+                    </li>
+                {% endfor %}
+            {% else %}
+                <li>No redacted files available.</li>
+            {% endif %}
+        </ul>
+   
+
+    <div class="safety-message">
+        <p>Your file is processed securely and never stored.</p>
+    </div>
+
+</body>
+
+</html>
