@@ -23,30 +23,27 @@
         </div>
     </div>
 
-    <div class="message">
-        <h1>Welcome to PII Redactor — a simple tool that safely and instantly removes all 
-            personally identifiable information (PII) from your uploaded files.</h1>
-    </div>
-
     <div class="redaction_results">
-        <h2>Your file has been successfully processed. Click on the link(s) below to download your file(s)</h2>
-        <ul>
-            {% if files and files|length > 0 %}
+        <h1>Your file(s) have been processed. Click the links or button below to download.</h1>
+        {% if files and files|length > 0 %}
+            <div class="download-options">
+                <a href="{{ url_for('download_all') }}" class="download-all-btn">Download All Files (ZIP)</a>
+            </div>
+            <ul>
                 {% for file in files %}
                     <li>
-                        <a href="{{ url_for('download_file', filename=file) }}">Download {{ file }}</a>
+                        <a href="{{ url_for('download_file', filename=file) }}" class="download-link">Download {{ file }}</a>
                     </li>
                 {% endfor %}
-            {% else %}
-                <li>No redacted files available.</li>
-            {% endif %}
-        </ul>
-   
-
-    <div class="safety-message">
-        <p>Your file is processed securely and never stored.</p>
+            </ul>
+        {% else %}
+            <p>No redacted files available.</p>
+        {% endif %}
     </div>
 
+    <div class="safety_message2">
+        <p>Your file is processed securely and never stored.</p>
+    </div>
 </body>
 
 </html>
