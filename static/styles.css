@@ -41,23 +41,59 @@ body {
     top: -150px;
 }
 .safety_message2{
+    margin: 50px auto 0 auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    position: static;
+}
+.redaction_results{
     margin: auto;
     width: 50%;
     padding: 10px;
     text-align: center;
-    position: sticky;
-    bottom: 0;
-}
-.redaction_results{
-    margin: auto;
-    width: 60%;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    top: 0px;
 }
 
 input[type="submit"]:hover{
     background-color: #A8C7E6;
     font-size: 18px;
+}
+
+.download-all-btn {
+    margin: 60px auto;
+    padding: 10px 20px;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.download-all-btn:hover {
+    background-color: #333;
+}
+
+.redaction_results ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.redaction_results li {
+    margin: 10px 0;
+}
+
+.download-link {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.download-link:hover {
+    color: #003366;
+    text-decoration: underline;
 }

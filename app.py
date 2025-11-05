@@ -1,7 +1,8 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, abort, send_from_directory
+import zipfile
+from io import BytesIO
+from flask import Flask, render_template, request, redirect, url_for, abort, send_from_directory, send_file
 from pii_redactor import pii_redactor
-import os
 os.makedirs("results", exist_ok=True)
 
 app=Flask(__name__)
@@ -48,6 +49,24 @@ def download_file(filename):
         return send_from_directory(app.config['RESULT_PATH'], filename, as_attachment=True)
     except FileNotFoundError:
         abort(404)
+
+@app.route('/download-all')
+def download_all():
+    # Create a zip file containing all redacted files
+    memory_file = BytesIO()
+    with zipfile.ZipFile(memory_file, 'w') as zf:
+        for filename in os.listdir(app.config['RESULT_PATH']):
+            file_path = os.path.join(app.config['RESULT_PATH'], filename)
+            if os.path.isfile(file_path):
+                zf.write(file_path, filename)
+    
+    memory_file.seek(0)
+    return send_file(
+        memory_file,
+        mimetype='application/zip',
+        as_attachment=True,
+        download_name='redacted_files.zip'
+    )
 
 @app.route('/results')
 def results():
