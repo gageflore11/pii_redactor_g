@@ -28,6 +28,16 @@ body {
     top: -150px;
 }
 
+.textarea {
+    margin: 50px auto 0 auto;
+    width: 60%;
+    border: 5px solid black;
+    padding: 8px;
+    text-align: center;
+    position: relative;
+    top: -100px;
+}
+
 .message {
     margin: auto;
     width: 50%;
@@ -43,7 +53,9 @@ body {
     position: relative;
     top: -150px;
 }
-.safety_message2 {
+
+/* For results.html only */ 
+.safety-message2 {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -51,6 +63,7 @@ body {
     padding: 10px;
     text-align: center;
 }
+
 .redaction_results{
     margin: auto;
     width: 50%;
@@ -64,8 +77,8 @@ input[type="submit"]:hover{
 }
 
 .download-all-btn {
-    margin: 60px auto;
-    padding: 10px 20px;
+    margin: 300px auto;
+    padding: 10px 400px;
     font-family: "Playfair Display", serif;
     font-size: 16px;
     background-color: black;

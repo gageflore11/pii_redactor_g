@@ -28,7 +28,6 @@
             personally identifiable information (PII) from your uploaded files.</h1>
     </div>
 
-    <!-- Handle multiple file submission -->
     <div class="file-submit">
         <h2>Upload a file(s) (.txt, .pdf, .doc, .docx) to have the PII redacted.</h2>
         <form method="POST" action="" enctype="multipart/form-data">
@@ -36,9 +35,17 @@
             <p><input type="submit" value="Redact!"></p>
         </form>
     </div>
+   
+    <div class = "textarea">
+        <h2>Or, paste text directly below to have the PII redacted.</h2>
+        <form method="POST" action="">
+            <p><textarea name="text_input" rows="15" cols="100" placeholder="Your text goes here"></textarea></p>
+            <p><input type="submit" value="Redact!"></p>
+        </form>
+    </div>
 
     <div class="safety-message">
-        <p>Your file is processed securely and never stored.</p>
+        <p>Your files are processed securely and never stored.</p>
     </div>
 
 </body>
