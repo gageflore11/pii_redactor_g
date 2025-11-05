@@ -51,10 +51,10 @@ body {
 .redaction_results{
     margin: auto;
     width: 60%;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     position: relative;
-    top: -100px;
+    top: 0px;
 }
 
 input[type="submit"]:hover{
